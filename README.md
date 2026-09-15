@@ -1,9 +1,9 @@
 # Ing-Software
 
 # Nombre del proyecto
-Proyecto Horizonte 
+Proyecto Horizonte (nombre provisional)
 ## Descripción
-Breve descripción del problema y solución propuesta.
+El "Proyecto Horizonte" es una herramienta para combatir la deserción escolar en zonas vulnerables. Proyecto Horizonte unifica los datos de los estudiantes (asistencia, calificaciones y conductas) con el fin de medir y comparar dichos datos y dar aviso oportuno a las autoridades pertinentes (profesores, directivos académicos) sobre una posible deserción escolar.
 
 ## Integrantes
 - Mary González      ----> PO
