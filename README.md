@@ -11,10 +11,17 @@ El "Proyecto Horizonte" es una herramienta para combatir la deserción escolar e
 - Omar Millar        ----> PO
 
 ## Arquitectura
-Arquitectura seleccionada durante la Unidad 1
+La arquitectura seleccionada corresponde a un Monolito Modular con Arquitectura Limpia (Clean Architecture) basada en principios de Arquitectura Hexagonal.
 
 ## Tecnologías
 Tecnologías que utilizará el proyecto.
 
 ## Organización del repositorio
-Descripción básica de las carpetas principales.
+/proyecto
+├── Main
+├── README.md
+├── .gitignore
+├── docs/
+├── src/
+└── tests/
+
