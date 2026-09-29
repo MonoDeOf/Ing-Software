@@ -33,3 +33,12 @@ La arquitectura seleccionada corresponde a un Monolito Modular con Arquitectura 
 ├── src/
 └── tests/
 
+## Requisitos previos
+- Python 3.8 o superior.
+- Instalar Pandas y OpenPyXL:
+  ```bash
+  pip install pandas openpyxl
+
+## Generador de Fichas de Estudiantes
+Este proyecto conecta una base de datos Excel (`BD.xlsx`) con un modelo de datos en JSON para generar fichas individuales de estudiantes, enlazando automáticamente la información del alumno con la de su apoderado mediante el `rut_estudiante`.
+
