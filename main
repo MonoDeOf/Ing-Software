@@ -1,7 +1,50 @@
-main
- │
- ├── feature/login
- │
- ├── feature/usuarios
- │
- └── feature/interfaz
+import os
+from src.generador_fichas import GestorFichas
+
+def main():
+    print("=== Sistema de Gestión de Fichas Estudiantiles ===")
+    
+    # Rutas relativas a los archivos
+    ruta_excel = "BD.xlsx"  # Asegúrate de que el Excel esté en la raíz del proyecto
+    ruta_template = os.path.join("src", "ficha_template.json")
+    
+    if not os.path.exists(ruta_excel):
+        print(f"Error: No se encontró el archivo '{ruta_excel}' en el directorio raíz.")
+        return
+
+    # Inicializar el gestor
+    gestor = GestorFichas(ruta_excel, ruta_template)
+    
+    while True:
+        print("\nOpciones:")
+        print("1. Buscar estudiante y generar ficha JSON")
+        print("2. Salir")
+        
+        opcion = input("Elige una opción (1 o 2): ")
+        
+        if opcion == '2':
+            print("Saliendo del sistema...")
+            break
+        elif opcion == '1':
+            query = input("Ingresa el RUT (con punto y guion) o Nombre del estudiante a buscar: ")
+            resultados = gestor.buscar_estudiante(query)
+            
+            if resultados.empty:
+                print("No se encontraron estudiantes con ese criterio.")
+            else:
+                print(f"\nSe encontraron {len(resultados)} coincidencia(s):")
+                for index, row in resultados.iterrows():
+                    print(f"- RUT: {row['rut_estudiante']} | Nombre: {row['nombre']} {row['apellido_paterno']}")
+                
+                rut_elegido = input("\nCopia y pega el RUT del estudiante exacto para generar su ficha: ")
+                
+                archivo_creado = gestor.generar_json(rut_elegido)
+                if archivo_creado:
+                    print(f"¡Éxito! Ficha generada y guardada en: {archivo_creado}")
+                else:
+                    print("Error: El RUT ingresado no coincide con ningún registro exacto.")
+        else:
+            print("Opción inválida.")
+
+if __name__ == "__main__":
+    main()
