@@ -1,0 +1,26 @@
+{
+  "estudiante": {
+    "rut": "",
+    "nombre": "",
+    "apellido_paterno": "",
+    "apellido_materno": "",
+    "nivel_academico": "",
+    "especialidad_tp": ""
+  },
+  "asignaturas_electivas": {
+    "electivo_1": "",
+    "electivo_2": "",
+    "electivo_3": "",
+    "electivo_4": ""
+  },
+  "apoderado": {
+    "nombre": "",
+    "apellido": "",
+    "numero_contacto": ""
+  },
+  "resumen_anotaciones": {
+    "positivas": 0,
+    "negativas": 0,
+    "neutras": 0
+  }
+}
