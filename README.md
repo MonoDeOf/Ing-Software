@@ -7,8 +7,8 @@ El "Proyecto Horizonte" es una herramienta para combatir la deserción escolar e
 
 ## Integrantes
 - Mary González      ----> PO
-- Benjamín Farías    ----> PO
-- Omar Millar        ----> PO
+- Benjamín Farías    ----> SM
+- Omar Millar        ----> DEV
 
 ## Arquitectura
 La arquitectura seleccionada corresponde a un Monolito Modular con Arquitectura Limpia (Clean Architecture) basada en principios de Arquitectura Hexagonal.
