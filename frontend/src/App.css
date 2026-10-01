@@ -4,32 +4,46 @@
 
 .page {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 64px 24px;
+  padding: 48px 24px;
   background: #f5f7fa;
   font-family: Arial, sans-serif;
   color: #1f2937;
 }
 
+.content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .card {
   width: 100%;
-  max-width: 620px;
   padding: 32px;
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
 .header {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
+}
+
+.header h1,
+.header h2 {
+  margin: 0 0 8px;
 }
 
 .header h1 {
-  margin: 0 0 8px;
   font-size: 28px;
+}
+
+.header h2 {
+  font-size: 24px;
 }
 
 .header p {
@@ -57,11 +71,6 @@
   border-radius: 8px;
   font-size: 16px;
   box-sizing: border-box;
-}
-
-.field small {
-  color: #6b7280;
-  line-height: 1.4;
 }
 
 .input-with-suffix {
@@ -98,9 +107,6 @@ button:hover {
   margin-top: 20px;
   padding: 12px;
   border-radius: 8px;
-}
-
-.success {
   background: #ecfdf5;
   color: #065f46;
 }
@@ -108,4 +114,74 @@ button:hover {
 .error {
   background: #fef2f2;
   color: #991b1b;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.students-table th {
+  background: #f9fafb;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.students-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.risk-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.risk-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.risk-low {
+  background: #22c55e;
+}
+
+.risk-medium {
+  background: #eab308;
+}
+
+.risk-high {
+  background: #ef4444;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 24px 12px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .students-table th,
+  .students-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
 }
