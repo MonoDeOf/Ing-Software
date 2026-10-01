@@ -1,0 +1,111 @@
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 64px 24px;
+  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+}
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  padding: 32px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.header p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.field small {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.input-with-suffix {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-with-suffix input {
+  flex: 1;
+}
+
+.input-with-suffix span {
+  font-weight: 600;
+}
+
+button {
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
