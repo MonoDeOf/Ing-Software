@@ -1,7 +1,7 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-
+from src.motor_riesgo import MotorRiesgo
 
 app = FastAPI()
 
@@ -58,3 +58,14 @@ def actualizar_configuracion(config: RiskConfig):
         "mensaje": "Configuración actualizada correctamente.",
         "configuracion": configuracion_actual
     }
+
+@app.get("/api/students-risk")
+def obtener_riesgo_estudiantes():
+    motor = MotorRiesgo(
+        "BD.xlsx",
+        umbral_asistencia=configuracion_actual.umbral_asistencia,
+        minimo_notas_deficientes=configuracion_actual.minimo_notas_deficientes,
+        operador_logico=configuracion_actual.operador_logico
+    )
+
+    return motor.evaluar_todos()

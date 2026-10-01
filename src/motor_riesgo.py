@@ -58,13 +58,16 @@ class MotorRiesgo:
 
         if estudiante.empty:
             return None
-        
+
         fila = estudiante.iloc[0]
 
         asistencia = float(fila["asistencia"])
 
-        if 0<= asistencia <= 1:
+        # La BD guarda la asistencia como decimal.
+        # Ejemplo: 0.863 = 86.3 %
+        if 0 <= asistencia <= 1:
             asistencia *= 100
+
         asistencia = round(asistencia, 1)
 
         cantidad_notas_deficientes = self.contar_notas_deficientes(
@@ -79,23 +82,33 @@ class MotorRiesgo:
         )
 
         if self.operador_logico == "AND":
-            regla_disparada = (
-                condicion_asistencia and condicion_notas
-            )
+            regla_disparada = condicion_asistencia and condicion_notas
         else:
-            regla_disparada = (
-                condicion_asistencia or condicion_notas
-            )
+            regla_disparada = condicion_asistencia or condicion_notas
+
+        factores_negativos = sum([
+            condicion_asistencia,
+            condicion_notas
+        ])
+
+        if factores_negativos == 2:
+            nivel_riesgo = "ALTO"
+        elif factores_negativos == 1:
+            nivel_riesgo = "MEDIO"
+        else:
+            nivel_riesgo = "BAJO"
 
         return {
             "rut_estudiante": rut_estudiante,
+            "nombre": str(fila["nombre"]),
+            "apellido_paterno": str(fila["apellido_paterno"]),
             "asistencia": asistencia,
             "cantidad_notas_deficientes": cantidad_notas_deficientes,
             "cumple_condicion_asistencia": condicion_asistencia,
             "cumple_condicion_notas": condicion_notas,
             "operador_logico": self.operador_logico,
-            "regla_disparada": regla_disparada
-
+            "regla_disparada": regla_disparada,
+            "nivel_riesgo": nivel_riesgo
         }
 
     def evaluar_todos(self):
