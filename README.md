@@ -25,16 +25,16 @@ La arquitectura seleccionada corresponde a un Monolito Modular con Arquitectura 
 
 ## Estructura del Repositorio
 /proyecto
-├── main.py                     # Script principal y menú interactivo CLI
-├── README.md                   # Documentación del proyecto
-├── .gitignore                  # Exclusiones de control de versiones
-├── BD.xlsx                     # Base de datos centralizada (Persistencia)
-├── RegistrosAuditoria.json     # Log automático de cambios y ediciones de datos
-├── docs/                       # Carpeta de salida para las fichas generadas (.json)
-├── src/                        # Código fuente y lógica de negocio
-│   ├── generador_fichas.py     # Motor de procesamiento, cruce de datos y validaciones
-│   └── ficha_template.json     # Plantilla base para el Objeto de Transferencia de Datos
-└── tests/                      # Pruebas unitarias y de integración                   
+├── main.py                
+├── README.md               
+├── .gitignore                
+├── BD.xlsx                  
+├── RegistrosAuditoria.json    
+├── docs/                      
+├── src/                        
+│   ├── generador_fichas.py     
+│   └── ficha_template.json     
+└── tests/                                     
 
 ## Requisitos Previos e Instalación
 Para ejecutar el proyecto de manera local, asegúrate de tener instalado Python 3.8 o superior.
